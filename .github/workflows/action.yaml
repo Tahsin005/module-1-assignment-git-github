@@ -1,0 +1,16 @@
+name: CI on Push to Main
+
+on:
+    push:
+        branches:
+            -main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Read the hello.txt file
+              run: cat hello.txt
